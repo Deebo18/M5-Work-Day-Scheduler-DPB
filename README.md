@@ -26,6 +26,7 @@ THEN the saved events persist
 ```
 
 The following animation demonstrates the application functionality:
+![Screenshot of Scheduler](./assets/images/Scheduler.jpeg)
 
 [https://deebo18.github.io/M5-Work-Day-Scheduler-DPB/](https://deebo18.github.io/M5-Work-Day-Scheduler-DPB/)
 
