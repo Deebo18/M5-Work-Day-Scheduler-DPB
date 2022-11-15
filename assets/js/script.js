@@ -1,6 +1,8 @@
+// Displays todays date at the top.
 var today = dayjs();
 $("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 
+//Current Time in hours
 function timeTracker() {
   var timeNow = dayjs().format('HH');
   console.log(timeNow)
@@ -8,11 +10,12 @@ function timeTracker() {
   $(".time-block").each(function() {
   var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
+  // Compares the current time and adds classes for past, present and future colors.
   if (blockTime < timeNow) {
     $(this).removeClass("future");
     $(this).removeClass("present");
     $(this).addClass("past");
-  } else if (blockTime == timeNow) {
+  } else if (blockTime === timeNow) {
     $(this).removeClass("past");
     $(this).removeClass("future");
     $(this).addClass("present");
@@ -24,6 +27,7 @@ function timeTracker() {
 })
 }
 
+// saveBtn click listener
 $(".saveBtn").click(function (event) {
   event.preventDefault();
   var value = $(this).siblings(".description").val();
@@ -31,6 +35,7 @@ $(".saveBtn").click(function (event) {
   localStorage.setItem(time, value);
 });
 
+//Pulls any items from local storage
 $("#hour8 .description").val(localStorage.getItem("hour8"));
 $("#hour9 .description").val(localStorage.getItem("hour9"));
 $("#hour10 .description").val(localStorage.getItem("hour10"));
